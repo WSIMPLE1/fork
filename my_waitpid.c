@@ -16,26 +16,21 @@ int main(int argc,int argv[])
 
 		if(fork()==0)
 		{
-		if(i==2)
-	         {
-			 pid=getpid();		
-		 }
+		  if(i==2)
+	          {
+	          pid=getpid();
+		  printf("%d",pid);
+		  }
 			break;
 
 		}
-		
-	         		
-	
 
 	}
 	
-
-	
-
-	if(i==5)
+         if(i==5)
 	{
-		sleep(5);
-	     wpid =waitpid(pid,NULL,WNOHANG);
+	     sleep(2);
+	     wpid =waitpid(i,NULL,0);
 	     if(wpid==-1)
 	     {
 		     perror("waitpid error");
